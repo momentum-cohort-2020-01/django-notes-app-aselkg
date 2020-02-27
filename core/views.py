@@ -32,11 +32,17 @@ def note_new(request):
 def edit(request, pk):
     note = get_object_or_404(Note, pk=pk)
     if request.method == "POST":
-        form = NoteForm(request.POST, instance=note)
+        form = NoteForm(request.POST, instance=note)# it means it already exist
         # if form.is_valid():
-        note = form.save(commit=False)
+        # note = form.save(commit=False)
         note = form.save()
         return redirect('note_detail', pk=note.pk)
     else:
         form = NoteForm(instance=note)
     return render(request, 'core/note_edit.html', {'form': form})
+
+
+def delete(request, pk):
+    note = get_object_or_404(Note, pk=pk)
+    note.delete()
+    return redirect('notes_list')

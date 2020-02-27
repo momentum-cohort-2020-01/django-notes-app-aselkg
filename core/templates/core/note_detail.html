@@ -5,16 +5,19 @@
 {% block content %}
 <div class="container">
     <div class="row">
-        <div class="col-4">
+        <div class="col-6">
             <a href="{% url 'notes_list'  %}">
                 <h4>{{ note.title }}</h4>
             </a>
 
             <p>{{ note.body }}</p>
-            <p class="date">{{ note.created_at }}</pclass="date">
-                <p class="date">{{ note.updated_at}}</p>
-                <a class="btn btn-default" href="{% url 'note_edit' note.pk %}">
+            <p>{{ note.created_at }}</pclass="date">
+                <p>{{ note.updated_at}}</p>
+                <a class="button" href="{% url 'note_edit' note.pk %}">
                     <p>Update</p>
+                </a>
+                <a class="button" href="{% url 'note_delete' note.pk%}">
+                    <p>Delete</p>
                 </a>
         </div>
     </div>

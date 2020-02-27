@@ -4,12 +4,12 @@
 
 {% block content %}
 {% for note in notes %}
+<table class="table-hoverable">
+    <a class="row" href="{% url 'note_detail' note.pk %}">{{ note.title }}</a>
 
-<a href="{% url 'note_detail' note.pk %}">{{ note.title }}</a>
-
-{% endfor %}
-
+    {% endfor %}
+</table>
 <a href="{% url 'note_new' %}" class="top-menu">
-    <p>New note</p>
+    <p class="button">New note</p>
 </a>
 {% endblock %}

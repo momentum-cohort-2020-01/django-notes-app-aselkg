@@ -13,11 +13,11 @@
 </head>
 
 <body>
-    {% block heading %} <h1>Notes</h1> {% endblock %}
+    <!-- {% block heading %} <h1>Notes</h1> {% endblock %} -->
     <a href="{% url 'notes_list'  %}">
-        <h4>Note List</h4>
+        <h4>Notes</h4>
     </a>
-    <section class='todos container'>
+    <section class='notes container'>
         {% block content %} {% endblock %}
     </section>
 
