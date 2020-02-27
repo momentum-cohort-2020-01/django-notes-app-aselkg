@@ -1,15 +1,25 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    {% block title %}<title>Notes</title>{% endblock %}
+    {% block title %}
+    <title>Notes</title>
+    {% endblock %}
+    <link rel="stylesheet" href="https://cdn.shoelace.style/1.0.0-beta.25/shoelace.css">
 </head>
 
 <body>
     {% block heading %} <h1>Notes</h1> {% endblock %}
+    <a href="{% url 'notes_list'  %}">
+        <h4>Note List</h4>
+    </a>
+    <section class='todos container'>
+        {% block content %} {% endblock %}
+    </section>
 
 </body>
 

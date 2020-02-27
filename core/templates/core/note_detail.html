@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}<title>Notes detail</title>{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+            <a href="{% url 'notes_list'  %}">
+                <h4>{{ note.title }}</h4>
+            </a>
+
+            <p>{{ note.body }}</p>
+            <p class="date">{{ note.created_at }}</pclass="date">
+                <p class="date">{{ note.updated_at}}</p>
+                <a class="btn btn-default" href="{% url 'note_edit' note.pk %}">
+                    <p>Update</p>
+                </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
